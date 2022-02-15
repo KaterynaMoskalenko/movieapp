@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #22254b;
+}
+.header {
+    width: 100%;
+    background-color: #373b69;
+    padding: 15px;
+
+    &__search {
+        background-color: transparent;
+        border: 2px solid #22254b;
+        border-radius: 50px;
+        font-family: inherit;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        color: #fff;
+    }
+    &__search::placeholder {
+        color: #7378c5;
+    }
+    &__search:focus {
+        outline: none;
+        background-color: #22254b;
+    }
+}
+.main {
+    width: 100vw;
+    padding: 15px 0;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 320px));
+    gap: 25px;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 4px 5px #00000033;
+        & img {
+            height: 90%;
+            min-height: 480px;
+        }
+    }
+    &__overview {
+        background-color: #fff;
+        padding: 2rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        max-height: 100%;
+        transform: translateY(101%);
+        overflow-y: auto;
+        transition: transform 0.3s ease-in;
+        max-width: 320px;
+        border-radius: 3px;
+        font-size: 22px;
+    }
+    &__item:hover .main__overview {
+        transform: translateY(0%);
+    }
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #373b69;
+        align-items: center;
+        min-height: 150px;
+        flex-grow: 1;
+        border-end-end-radius: 4px;
+        border-end-start-radius: 4px;
+        & h2 {
+            color: #eee;
+        }
+        & span {
+            background-color: #090e42;
+            border-radius: 3px;
+            padding: 15px;
+            font-size: 22px;
+        }
+    }
+}
+.orange {
+    color: #f18761;
+}
+.lightgreen {
+    color: lightgreen;
+}
+.red {
+    color: red;
+}
+.footer {
+    padding: 25px;
+    display: flex;
+    color: #eee;
+    font-size: 25px;
+    justify-content: space-around;
+    & a {
+        color: #eee;
+        text-decoration: none;
+    }
+    &__data {
+        display: flex;
+        justify-content: space-around;
+        & .year {
+            margin-right: 250px;
+        }
+    }
+}
